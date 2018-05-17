@@ -3,7 +3,8 @@ DIST=../dist
 UNI_JAR=u_universum.jar
 SIGNED_JAR=universum.jar
 
-TAR=tar
+#TAR=tar
+TAR=/opt/local/bin/gnutar
 
 JAVA_SRC=$(shell      \
            find       \
@@ -20,7 +21,7 @@ all: sanity prepare uni makebeing $(SIGNED_JAR)
 
 sanity:
 	@if [ ! -d $(JAVA_HOME)/jre -a ! -f  $(JAVA_HOME)/bin/java ]; then \
-           echo "Please set JAVA_HOME to 1.5 JDK, use forward slashes on Win32";\
+           echo "Please set JAVA_HOME to 1.8 JDK, use forward slashes on Win32";\
            exit 1; \
         fi
 
@@ -55,7 +56,7 @@ $(UNI_JAR): prepare classes
 classes: $(JAVA_CLASSES)
 	@if [ -f changed ]; then \
           printf "Compiling " && printf "`wc -l changed`" && echo " files"; \
-          $(JAVA_HOME)/bin/javac -deprecation -source 1.5 -target 1.5 \
+          $(JAVA_HOME)/bin/javac -deprecation -source 1.8 -target 1.8 \
              -classpath $(DIST) -Xlint:unchecked \
             -d $(DIST) `cat changed`; \
         fi
@@ -93,7 +94,7 @@ distrib: docs
 	@echo ../src/universum/Tool.java >> list
 	@echo ../src/universum/beings/SimpleBeing.java >> list
 	@echo ../src/universum/beings/BeingTemplate.java >> list
-	@$(JAVA_HOME)/bin/javac -source 1.5 -target 1.5 \
+	@$(JAVA_HOME)/bin/javac -source 1.8 -target 1.8 \
             -d distr -cp distr \
             `cat list` 
 	@$(TAR) cf - `cat list` \

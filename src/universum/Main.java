@@ -293,7 +293,7 @@ public class Main {
             being.mkdir();
             
             java.util.List<String> args = new java.util.ArrayList<String>();
-            args.add("-target");  args.add("1.5"); 
+            args.add("-target");  args.add("1.8");
             args.add("-classpath");
             String cp1 = 
                 new File(being, "../dist").getAbsolutePath();

@@ -11,18 +11,19 @@
    feel free to consult SimpleBeing.java and engine source code
  - eventually test with "-secure" switch (after updating java.policy according
    to comment in JungleSecurity.java near CHECK_SECURITY, or with 
-   -Djava.security.policy=full_path_to_java.policy_from distribution)
+   -Djava.security.policy=full_path_to_java.policy_from distribution), or copy
+   src/java.policy to $HOME/.java.policy
  - make incremental changes
  - cooperate with you friends to be able to have real opponents, or
    use http://www.electricjungle.ru portal to compete with other players
- - use JDK1.6, it has better performance and also some bugs that may affect
+ - use JDK1.8, it has better performance and also some bugs that may affect
    Electric Jungle was fixed 
 
      Submission advices
 
  -  java -jar ejungle_distr.jar -makebeing path.to.properties.file
     will make being for you, if engine have't done that already
- -  if you're making being's JAR yourself, make sure you compiled with -target 1.5 
+ -  if you're making being's JAR yourself, make sure you compiled with -target 1.8
 
      Tweaking
 
