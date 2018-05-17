@@ -1,0 +1,54 @@
+    Development advices
+
+ - start with BeingTemplate.java and template.properties
+ - add your creature in being.properties, so that you 
+   don't have to load JAR file manually, also put path to my.properties file
+   as last value of property (in this case it will compile 
+   your classes automagically for you)
+ - use -debug command line switch - it prints a lot of useful debug info
+   (and also seeds random number generator in predictable way)
+ - if in doubt how to do smth, or what particular method does
+   feel free to consult SimpleBeing.java and engine source code
+ - eventually test with "-secure" switch (after updating java.policy according
+   to comment in JungleSecurity.java near CHECK_SECURITY, or with 
+   -Djava.security.policy=full_path_to_java.policy_from distribution)
+ - make incremental changes
+ - cooperate with you friends to be able to have real opponents, or
+   use http://www.electricjungle.ru portal to compete with other players
+ - use JDK1.6, it has better performance and also some bugs that may affect
+   Electric Jungle was fixed 
+
+     Submission advices
+
+ -  java -jar ejungle_distr.jar -makebeing path.to.properties.file
+    will make being for you, if engine have't done that already
+ -  if you're making being's JAR yourself, make sure you compiled with -target 1.5 
+
+     Tweaking
+
+ - for better understanding of what's going on yom may to start engine 
+   with -altui switch it will give you zooming capability
+ - by default engine starts with network support, so you can use viewer.html
+   to look what's going on in engine from browser (with an applet)
+ - if you want to do fine tuning - you may useable -headless switch 
+   which just starts game with no UI, runs it as fast as possible and 
+   prints results
+
+     SDK building advices
+
+ - most likely you don't want this section, as creature 
+   will be built automatically for you by the engine, so it's only
+   for case you want to build engine itself
+ - if working on Windows you likely should use Netbeans
+ - just unpack distribution jar and modify beings.properties
+   so that SimpleBeing's line ends with real path to simple.properties
+   on your system
+ - for Windows command line tools you have three options: ant, cygwin, build.bat
+ - if using cygwin, make sure you have your JAVA_HOME set and 
+   uses forward slashes, and that cygwin's bin directory on your path
+ - for Unix - command line build is probably what you want if you're 
+   in hackerish mood, otherwise Netbeans will also do pretty well
+ - if using Netbeans, try to remove folder 'universum' with .class files, if
+   you wish to rebuild engine, otherwise Netbeans may use older version 
+
+ 

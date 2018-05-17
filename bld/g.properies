@@ -1,0 +1,4 @@
+beings: universum.beings.ResearchBeing@turtle_research.jar \
+        universum.beings.Ceratops@andrew_ceratops.jar    
+kind: DUEL
+autostart: true
